@@ -44,15 +44,15 @@ Route::get('/territoire', 'NousController@territoire')->name('territoires');
 
 //Route accueil
 
-Route::get('/', 'PostsController@create');
+Route::get('/', 'PostsController@welcome');
 Route::get('/contact', 'ContactController@contact');
 Route::get('/galerie', 'GalleryController@galerie');
 Route::get('/inscription', 'PostsController@inscription');
 Route::get('/actualite', 'PostsController@actualite');
 Route::get('/partenaire', 'PostsController@partenaire');
-Route::get('/edition', 'PostsController@edit');
 
-Route::post('/upload', 'PostsController@upload');
+Route::get('/creation', 'PostsController@create');
+Route::get('/modification', 'PostsController@modifier');
 
 Route::get('/editarticle', function () {
     return view('page/editarticle');

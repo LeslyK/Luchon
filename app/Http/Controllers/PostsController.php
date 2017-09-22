@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+//use\App\Category
+//use\App\Post
 
 class PostsController extends Controller
 {
-    public function create(){
-    	return view('welcome');
+    public function welcome(){
+        return view('welcome');
     }
 
     public function inscription(){
-    	return view('page.inscription');
+        return view('page.inscription');
     }
 
     public function partenaire(){
@@ -22,40 +24,13 @@ class PostsController extends Controller
         return view('accueil.actualite');
     }
 
-    public function edit(){
-        return view('page.edition');
+    public function create(){
+    	return view('page.creation');
     }
 
-      public function upload(Request $request)
-
-    {
-
-        $this->validate($request, [
-
-            'title' => 'required',
-            'description'=>'required',
-            'content'=>'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
-        ]);
-
-
-        $input['image'] = time().'.'.$request->image->getClientOriginalExtension();
-
-        $request->image->move(public_path('images'), $input['image']);
-
-
-        $input['title'] = $request->title;
-        $input['comment']=$request->comment;
-        //dd($input);
-
-        ImageGallery::create($input);
-
-
-        return back()
-
-            ->with('success','fichier sauvegarder');
-
+    public function modifier(){
+        return view('page.modification');
     }
     
+
 }
