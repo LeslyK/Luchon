@@ -47,16 +47,19 @@ Route::get('/territoire', 'NousController@territoire')->name('territoires');
 Route::get('/', 'PostsController@welcome');
 Route::get('/contact', 'ContactController@contact');
 Route::get('/galerie', 'GalleryController@galerie');
-Route::get('/inscription', 'PostsController@inscription');
+Route::get('/inscription', 'InscriptionController@inscription');
 Route::get('/actualite', 'PostsController@actualite');
-Route::get('/partenaire', 'PostsController@partenaire');
+Route::get('/partenaire', 'PartenaireController@partenaire');
 
-Route::get('/creation', 'PostsController@create');
+Route::get('/creation', 'PostsController@create')->name('creation');
+Route::post('/add', 'PostsController@add')->name('creationAdd');
+Route::post('/store', 'PostsController@store');
+Route::get('/list', 'PostsController@list')->name('liste');
 Route::get('/modification', 'PostsController@modifier');
 
-Route::get('/editarticle', function () {
-    return view('page/editarticle');
-});
+// Route::get('/editarticle', function () {
+//     return view('page/editarticle');
+// });
 
 
 Auth::routes();
