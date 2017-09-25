@@ -9,7 +9,7 @@ class Post extends Model
 	protected $fillable = [
 	'title', 'description', 'image', 'content'];
 
-    public fonction categories(){
-    	return $this->belongsToMany('App\Category');
-    }
+    // public fonction categories(){
+    // 	return $this->belongsToMany('App\Category');
+    // }
 }

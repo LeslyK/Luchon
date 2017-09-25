@@ -53,7 +53,7 @@ Route::get('/partenaire', 'PartenaireController@partenaire');
 
 Route::get('/creation', 'PostsController@create')->name('creation');
 Route::post('/add', 'PostsController@add')->name('creationAdd');
-Route::post('/store', 'PostsController@store');
+Route::post('/store', 'PostsController@store')->name('postStore');
 Route::get('/list', 'PostsController@list')->name('liste');
 Route::get('/modification', 'PostsController@modifier');
 
@@ -64,5 +64,5 @@ Route::get('/modification', 'PostsController@modifier');
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 

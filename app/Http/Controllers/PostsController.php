@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use\App\Category;
-//use\App\Post;
+use\App\Post;
 
 class PostsController extends Controller
 {
@@ -27,7 +27,9 @@ class PostsController extends Controller
 
     public function list(){
         
-        return view('page.list');
+        $posts = post::All();
+
+        return view('page.list')->withPosts($posts);
     }
 
     public function add(Request $request){
