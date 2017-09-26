@@ -16,7 +16,7 @@
 			</div>
 		@endif
 
-		<!-- {{-- {!! Form::open(['route' => ['postStore']]) !!} --}} -->
+		 {!! Form::open(['route' => ['PostStore']]) !!} 
 
 		<div class="form-group">
           {!! Form::label('title', 'Titre', ['class' => 'control-label']) !!}

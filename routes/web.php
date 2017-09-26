@@ -51,9 +51,9 @@ Route::get('/inscription', 'InscriptionController@inscription');
 Route::get('/actualite', 'PostsController@actualite');
 Route::get('/partenaire', 'PartenaireController@partenaire');
 
-Route::get('/creation', 'PostsController@create')->name('creation');
+Route::get('/creation', 'PostsController@formerCreate')->name('creation');
 Route::post('/add', 'PostsController@add')->name('creationAdd');
-Route::post('/store', 'PostsController@store')->name('postStore');
+Route::post('/store', 'PostsController@store')->name('PostStore');
 Route::get('/list', 'PostsController@list')->name('liste');
 Route::get('/modification', 'PostsController@modifier');
 
