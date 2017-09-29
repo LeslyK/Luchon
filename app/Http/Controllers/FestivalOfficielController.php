@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class InscriptionController extends Controller
+class FestivalOfficielController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,8 @@ class InscriptionController extends Controller
      */
     public function index()
     {
-        return view('accueil.inscription');
+        return view('festival.festivaloffs.festivaloff');
+
     }
 
     /**

@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
     public function galerie(){
-    	return view('page.galerie');
+    	return view('view.accueil.galerie');
     }
 }

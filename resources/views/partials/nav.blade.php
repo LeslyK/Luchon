@@ -13,40 +13,40 @@
 
          <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    
+
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Festival 2018<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('festival_officiel') }}">Le Festival Officiel</a></li>
-                            <li><a href="{{ url('festival_scolaire') }}">Le Festival Scolaire</a></li>
-                            <li><a href="{{ url('/evenements') }}">Les évènements</a></li>
-                            <li><a href="{{ url('/action') }}">Action Hors Festival</a></li>
+                            <li><a href="{{ url('festivaloffs/festivaloff') }}">Le Festival Officiel</a></li>
+                            <li><a href="{{ url('festivalScolaire/festival_scolaire') }}">Le Festival Scolaire</a></li>
+                            <li><a href="{{ url('evenements/evenement') }}">Les évènements</a></li>
+                            <li><a href="{{ url('actions/action') }}">Action Hors Festival</a></li>
                         </ul>
                     </li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">La Progammation scolaire<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/abandonne_pas') }}">Ne m'abandonne pas </a></li>
-                            <li><a href="{{ url('/prof') }}">Le Prof</a></li>
-                            <li><a href="{{ url('/ecologie') }}">Ecologie</a></li>
-                            <li><a href="{{ url('/festin_imaginaire') }}">Festins imaginaires</a></li>
-                            <li><a href="{{ url('/moi_juan') }}">Moi, Juan Carlos roi d'Espagne</a></li>
-                            <li><a href="{{ url('/humour_interdit') }}">Expo Humour Interdit</a></li>
-                            <li><a href="{{ url('/forum') }}">Forum des métiers</a></li>
+                            <li><a href="{{ url('/abandonnes/abandonne') }}">Ne m'abandonne pas </a></li>
+                            <li><a href="{{ url('/profs/prof') }}">Le Prof</a></li>
+                            <li><a href="{{ url('/ecologies/ecologie') }}">Ecologie</a></li>
+                            <li><a href="{{ url('/festins/festin_imaginaire') }}">Festins imaginaires</a></li>
+                            <li><a href="{{ url('/moi/moi_juan') }}">Moi, Juan Carlos roi d'Espagne</a></li>
+                            <li><a href="{{ url('/humours/humour_interdit') }}">Expo Humour Interdit</a></li>
+                            <li><a href="{{ url('/forums/forum') }}">Forum des métiers</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jury webséries<span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/participer') }}">Comment participer</a></li>
-                            <li><a href="{{ url('/reglement') }}">Règlement du prix</a></li>
-                            <li><a href="{{ url('/inscription') }}">Inscription</a></li>
+                            <li><a href="{{ url('/participants/participer') }}">Comment participer</a></li>
+                            <li><a href="{{ url('/reglements/reglement') }}">Règlement du prix</a></li>
+                            <li><a href="{{ url('/inscriptions/inscription') }}">Inscription</a></li>
                         </ul>
                     </li>
 
-                    <li ><a href="{{ url('/inscription') }}">Inscription</a></li>
-                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+                    <li ><a href="{{ url('/accueil/inscription') }}">Inscription</a></li>
+                    <li><a href="{{ url('/accueil/contact') }}">Contact</a></li>
 
                 </ul>
 
