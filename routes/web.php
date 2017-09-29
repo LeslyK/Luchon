@@ -55,7 +55,10 @@ Route::get('/creation', 'PostsController@formerCreate')->name('creation');
 Route::post('/add', 'PostsController@add')->name('creationAdd');
 Route::post('/store', 'PostsController@store')->name('PostStore');
 Route::get('/list', 'PostsController@list')->name('liste');
-Route::get('/modification', 'PostsController@modifier');
+Route::get('/modification/{$id}', 'PostsController@edit')->name('edit');
+Route::get('/destroy/{$id}', 'PostsController@destroy')->name('destroyPost');
+Route::get('/adminlist', 'PostsController@listAdmin');
+
 
 // Route::get('/editarticle', function () {
 //     return view('page/editarticle');
@@ -65,4 +68,3 @@ Route::get('/modification', 'PostsController@modifier');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-

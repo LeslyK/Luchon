@@ -27,10 +27,16 @@ class PostsController extends Controller
     }
 
     public function list(){
-        
+
         $posts = post::All();
 
         return view('page.list')->withPosts($posts);
+    }
+
+    public function listAdmin(){
+
+        $posts = post::All();
+      return view('page.adminlist')->withPosts($posts);
     }
 
     public function store(Request $request){
@@ -47,30 +53,23 @@ class PostsController extends Controller
         $post->description = $request->input('description');
         $post->image = $request->input('image');
         $post->content = $request->input('content');
-
         $post->save();
-
-
-        // $post = [
-        //     'tilte' => $request->input('tilte'),
-        //     'description' => $request->input('description'),
-        //     'image' => $request->input('image'),
-        //     'content' => $request->input('content'),
-        //   ];
-
-        // Post::create($post);
-
-        //Session::flash('flash_message', 'Article ajouté avec succès!');
-
-        return redirect()->route('liste');
+        // return redirect()->route('liste');
+        return back()->with('success','Post Uploaded successfully.');
     }
 
-    public function modifier($id){
-
-        $post = Post::findOFail($id);
-
-        return view('page.modification')->withPost($post);
+    public function edit($id){
+      dd($id);
+        $posts = Post::findOrFail($id);
+        return view('page.modification')->withPost($posts);
     }
-    
+    public function destroy($id){
+      var_dump($id);
+        $posts = Post::findOrFail($id);
+        $posts->delete();
+return;
+        // return back()
+        // ->with('success','Post removed successfully.');
+    }
 
 }
