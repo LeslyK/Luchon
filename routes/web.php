@@ -36,20 +36,20 @@ Route::get('/reglements/reglement', 'ReglementController@index');
 
 //Route nous
 
-// Route::get('/devenir', 'NousController@devenir')->name('bénevoles');
-// Route::get('/projet', 'NousController@projet')->name('nos_projets');
-// Route::get('/soutenir', 'NousController@soutenir')->name('soutenir');
-// Route::get('/stage', 'NousController@stage')->name('stages');
-// Route::get('/territoire', 'NousController@territoire')->name('territoires');
+Route::get('/devenirs/devenir', 'DevenirController@index');
+Route::get('/projets/projet', 'ProjetController@index');
+Route::get('/soutenirs/soutenir', 'SoutenirController@index');
+Route::get('/stages/stage', 'StageController@index');
+Route::get('/territoires/territoire', 'TerritoireController@index');
 
 //Route accueil
 
 Route::get('/', 'PostsController@welcome');
-Route::get('/accueil/contact', 'ContactController@contact');
-Route::get('/accueil/galerie', 'GalleryController@galerie');
+Route::get('/accueil/contact', 'ContactController@index');
+Route::get('/galerie', 'GalleryController@index');
 Route::get('/accueil/inscription', 'InscriptionController@index');
 Route::get('/actualite', 'PostsController@actualite');
-Route::get('/partenaire', 'PartenaireController@partenaire');
+Route::get('/partenaire', 'PartenaireController@index');
 
 // Route::get('/creation', 'PostsController@formerCreate')->name('creation');
 // Route::post('/add', 'PostsController@add')->name('creationAdd');

@@ -3,5 +3,5 @@
 @section('content')
     <div class="container">
       <h1>Galerie</h1>
-      </div>  
+    </div>  
 @endsection
