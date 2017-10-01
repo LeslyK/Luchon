@@ -13,7 +13,12 @@
 
 //Route festival
 
-Route::get('/actions/action', 'ActionController@index');
+Route::get('/actions/action', 'ActionsController@index');
+Route::get('/actions/create', 'ActionsController@create');
+Route::get('/actions/listaction', 'ActionsController@list')->name('actionList');
+Route::post('/store', 'ActionsController@store')->name('ActionStore');
+Route::get('/actions/actiondescript/{id}', 'ActionsController@description');
+Route::post('/update/{$id}', 'ActionsController@update')->name('actionUpdate');
 Route::get('/evenements/evenement', 'EvenementController@index');
 Route::get('/festivaloffs/festivaloff', 'FestivalOfficielController@index');
 Route::get('/festivalScolaire/festival_scolaire', 'FestivalScolaireController@index');
