@@ -63,7 +63,7 @@ class ActionsController extends Controller
 
 
 
-      return view('festival.actions.listaction');
+      return redirect()->route('actionList');
     }
 
     /**
@@ -130,7 +130,7 @@ class ActionsController extends Controller
       $action = Action::findOrFail($id);
 
   $action->delete();
+  return redirect()->route('actionList');
 
-  Session::flash('flash_message', 'L action a été supprimée avec succès!');
     }
 }

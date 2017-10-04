@@ -17,7 +17,7 @@ Route::get('/actions/action', 'ActionsController@index');
 Route::get('/actions/create', 'ActionsController@create')->name('actionCreate');
 Route::get('/actions/edit/{id}', 'ActionsController@edit')->name('actionEdit');
 Route::get('/actions/listaction', 'ActionsController@list')->name('actionList');
-Route::get('/delete', 'ActionsController@destroy')->name('actionDelete');
+Route::get('/delete/{id}', 'ActionsController@destroy')->name('actionDelete');
 Route::post('/store', 'ActionsController@store')->name('ActionStore');
 Route::post('/update/{id}', 'ActionsController@update')->name('actionUpdate');
 // Route::get('/actions/actiondescript/{id}', 'ActionsController@description');
