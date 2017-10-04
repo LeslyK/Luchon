@@ -14,11 +14,15 @@
 //Route festival
 
 Route::get('/actions/action', 'ActionsController@index');
-Route::get('/actions/create', 'ActionsController@create');
+Route::get('/actions/create', 'ActionsController@create')->name('actionCreate');
+Route::get('/actions/edit/{id}', 'ActionsController@edit')->name('actionEdit');
 Route::get('/actions/listaction', 'ActionsController@list')->name('actionList');
+Route::get('/delete', 'ActionsController@destroy')->name('actionDelete');
 Route::post('/store', 'ActionsController@store')->name('ActionStore');
-Route::get('/actions/actiondescript/{id}', 'ActionsController@description');
-Route::post('/update/{$id}', 'ActionsController@update')->name('actionUpdate');
+Route::post('/update/{id}', 'ActionsController@update')->name('actionUpdate');
+// Route::get('/actions/actiondescript/{id}', 'ActionsController@description');
+
+Route::get('actions/delete/{id}', 'ActionsController@destroy')->name('adestroyAction');
 Route::get('/evenements/evenement', 'EvenementController@index');
 Route::get('/festivaloffs/festivaloff', 'FestivalOfficielController@index');
 Route::get('/festivalScolaire/festival_scolaire', 'FestivalScolaireController@index');
@@ -51,23 +55,17 @@ Route::get('/territoires/territoire', 'TerritoireController@index');
 
 Route::get('/', 'PostsController@welcome');
 Route::get('/accueil/contact', 'ContactController@index');
-Route::get('/galerie', 'GalleryController@index');
 Route::get('/accueil/inscription', 'InscriptionController@index');
 Route::get('/actualite', 'PostsController@actualite');
 Route::get('/partenaire', 'PartenaireController@index');
 
-// Route::get('/creation', 'PostsController@formerCreate')->name('creation');
-// Route::post('/add', 'PostsController@add')->name('creationAdd');
-// Route::post('/store', 'PostsController@store')->name('PostStore');
-// Route::get('/list', 'PostsController@list')->name('liste');
-// Route::get('/modification/{$id}', 'PostsController@edit')->name('edit');
-// Route::get('/destroy/{$id}', 'PostsController@destroy')->name('destroyPost');
-// Route::get('/adminlist', 'PostsController@listAdmin');
+//Route gallery
+Route::get('/image-gallery', 'GalleryController@index');
+Route::get('/list-gallery', 'GalleryController@list');
+// Route::get('variety-description/{id}', 'GalleryController@description');
+Route::post('image-gallery', 'GalleryController@update');
+Route::delete('image-gallery/{id}', 'GalleryController@destroy');
 
-
-// Route::get('/editarticle', function () {
-//     return view('page/editarticle');
-// });
 
 
 Auth::routes();

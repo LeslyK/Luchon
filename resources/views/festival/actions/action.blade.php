@@ -9,8 +9,8 @@
                     <h4>{{ $action->title }}</h4>
                  </a>
                  {{ $action->description }}<br>
-                 <!-- {{ $action->image }}<br>
-                 {{ $action->content }} -->
+                 <!-- {{ $action->image }}<br> -->
+                 {{ $action->content }}
                </article>
                  @if(!$loop->last)
                    <hr>

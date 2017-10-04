@@ -21,7 +21,8 @@ class ActionsController extends Controller
 
     public function list()
     {
-      return view('festival.actions.listaction');
+        $actions = Action::All();
+      return view('festival.actions.listaction')->withActions($actions);
     }
 
     public function description()
@@ -60,6 +61,8 @@ class ActionsController extends Controller
       $action->content = $request->input('content');
       $action->save();
 
+
+
       return view('festival.actions.listaction');
     }
 
@@ -86,7 +89,7 @@ class ActionsController extends Controller
     {
       $action = Action::findOrFail($id);
 
-  return view('festival.actions.edit')->withFormation($action);
+  return view('festival.actions.edit')->withAction($action);
     }
 
     /**
@@ -109,7 +112,7 @@ class ActionsController extends Controller
 
       $input = $request->all();
 
-      $formation->fill($input)->save();
+      $action->fill($input)->save();
 
       Session::flash('flash_message', 'La formation a été modifiée avec succès!');
 

@@ -1,0 +1,85 @@
+@extends('layouts.app')
+
+@section('content')
+   <h1>List Admin</h1>
+   <table class="table table-inverse">
+       <thead>
+           <tr>
+             <th>Titre</th>
+             <th>Description</th>
+             <th>Ajouter</th>
+             <th>Modifier</th>
+             <th>Supprimer</th>
+           </tr>
+       </thead>
+       <tbody>
+          @foreach ($actions as $action)
+            <tr>
+              <td>{{action->title}}</td>
+              <td>Action_2</td>
+              <td style="text-align:left;"><a href="#"><i class="fa fa-pencil-square-o" aria-hidden="true">Add</i></a></td>
+            <td style="text-align:left;">
+                <a href="#"><i class="fa fa-pencil">mod</i></a>
+              </td>
+              <td style="text-align:left;">
+                <a href="#"><i class="fa fa fa-ban">del</i></a>
+              </td>
+            </tr>
+          @endforeach
+       </tbody>
+     </table>
+ @endsection
+
+<<-- galeries -->>
+ <div class='list-group gallery'>
+        @if($images->count())
+            @foreach($images as $image)
+            <div class='col-sm-4 col-xs-6 col-md-3 col-lg-3'>
+                <a class="thumbnail fancybox" rel="ligthbox" href="#">
+                    <img class="img-responsive" alt="" src="/images/{{ $image->image }}" />
+                    <div class='text-center'>
+                        <small class='text-muted'>{{ $image->title }}</small>
+                    </div>
+                </a>
+                <form action="{{ url('image-gallery',$image->id) }}" method="POST">
+                <input type="hidden" name="_method" value="delete">
+                {!! csrf_field() !!}
+                <button type="submit" class="close-icon btn btn-danger"><i class="glyphicon glyphicon-remove"></i></button>
+                </form>
+            </div>
+            @endforeach
+        @endif
+    </div>
+<< debut controller image store >>
+
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+      $this->validate($request, [
+
+      'title' => 'required',
+          'comment'=>'required',
+          'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
+      ]);
+
+      $input['image'] = time().'.'.$request->image->getClientOriginalExtension();
+
+      $request->image->move(public_path('images'), $input['image']);
+
+      $input['title'] = $request->title;
+      $input['description']=$request->comment;
+
+      ImageGallery::create($input);
+
+
+    return back()
+
+      ->with('success','Image Uploaded successfully.');
+    }
