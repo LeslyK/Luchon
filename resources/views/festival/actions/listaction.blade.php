@@ -7,7 +7,7 @@
            <tr>
              <th>Titre</th>
              <th>Description</th>
-             <th>Ajouter</th>
+             <th><a href="{{ route('actionCreate')}}" style="color: #ffffff " target="_blank">Ajouter</a></th>
              <th>Modifier</th>
              <th>Supprimer</th>
            </tr>
