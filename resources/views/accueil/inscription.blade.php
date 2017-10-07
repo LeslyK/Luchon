@@ -1,62 +1,72 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading"><h3>Inscription Programme</h3></div>
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST">
-                        {{ csrf_field() }}
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+    <h2>Festival Fiche d’Inscription</h2>
+      <div class="col">
+        <form action="index.html" method="post">
+      <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Classe</th>
+                <th>Nom l’enseignant référent</th>
+                <th>Nombre d’élèves</th>
+                <th>Nombre d’accompagnant</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td><input class="form-control" type="text" name="classe"></td>
+                  <td><input class="form-control" type="text" name="classe"></td>
+                  <td><input class="form-control" type="text" name="classe"></td>
+                  <td><input class="form-control" type="text" name="classe"></td>
+              </tr>
+              <tr>
+                  <td><input class="form-control" type="text" name="classe"></td>
+                  <td><input class="form-control" type="text" name="classe"></td>
+                  <td><input class="form-control" type="text" name="classe"></td>
+                  <td><input class="form-control" type="text" name="classe"></td>
+              </tr>
+            </tbody>
+      </table>
+      <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Remarque</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td>{!! Form::label('title', 'Nom de l’établissement scolaire :') !!}</td>
+                  <td><input class="form-control" type="text" name="nom"></td>
+              </tr>
+              <tr>
+                  <td>{!! Form::label('title', 'Adresse :') !!}</td>
+                  <td><input class="form-control" type="address" name="adresse"></td>           
+              </tr>
+              <tr>
+                  <td>{!! Form::label('title', 'Code postal :') !!}</td>
+                  <td><input class="form-control" type="text" name="code"></td>          
+              </tr>
+              <tr>
+                  <td>{!! Form::label('title', 'Téléphone :') !!}</td>
+                  <td><input class="form-control" type="tel" name="telephone"></td>           
+              </tr>
+              <tr>
+                  <td>{!! Form::label('title', 'Email de l’établissemen :') !!}</td>
+                  <td><input class="form-control" type="text" name="mail_1"></td>      
+              </tr>
+              <tr>
+                  <td>{!! Form::label('title', 'Email de l’enseignant référent :') !!}</td>
+                  <td><input class="form-control" type="text" name="mail_2"></td>            
+              </tr>
+            </tbody>
+      </table>
+      <input type="submit" value="Envoyer Mon Message" style="color:#333333" />
+        </form>
+        <script type="text/javascript">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+        </script>
+      </div>
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label  class="col-md-4 control-label">Nom</label>
-
-                            <div class="col-md-6">
-                                <input  type="text" class="form-control" name="nom" required>                                
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label  class="col-md-4 control-label">Etablissement</label>
-
-                            <div class="col-md-6">
-                                <input  type="text" class="form-control" name="etablissement" required>                                
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label  class="col-md-4 control-label">Listes</label>
-
-                            <div class="col-md-6">
-                                <input type='file' name='list' value='parcourir'></div>
-                        </div>
-
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Envoyer
-                                </button>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 @endsection

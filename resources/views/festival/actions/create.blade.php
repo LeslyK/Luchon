@@ -18,7 +18,7 @@
 
 		 {!! Form::open(['route' => ['ActionStore']]) !!}
 
-		<div class="form-group">
+		    <div class="form-group">
           {!! Form::label('title', 'Titre', ['class' => 'control-label']) !!}
           {!! Form::text('title', null, ['class' => 'form-control']) !!}
         </div>

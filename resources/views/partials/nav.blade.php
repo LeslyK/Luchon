@@ -45,7 +45,14 @@
                         </ul>
                     </li>
 
-                    <li ><a href="{{ url('/accueil/inscription') }}">Inscription</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inscription et info pratique<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Conditions d'inscriptions</a></li>
+                            <li><a href="#">Info pratique</a></li>
+                            <li><a href="{{ url('/accueil/inscription') }}">Inscription</a></li>
+                        </ul>
+                    </li>
                     <li><a href="{{ url('/accueil/contact') }}">Contact</a></li>
 
                 </ul>

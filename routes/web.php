@@ -20,7 +20,7 @@ Route::get('/actions/listaction', 'ActionsController@list')->name('actionList');
 Route::get('/delete/{id}', 'ActionsController@destroy')->name('actionDelete');
 Route::post('/store', 'ActionsController@store')->name('ActionStore');
 Route::post('/update/{id}', 'ActionsController@update')->name('actionUpdate');
-// Route::get('/actions/actiondescript/{id}', 'ActionsController@description');
+Route::get('/actions/actiondescript/{id}', 'ActionsController@description');
 
 Route::get('actions/delete/{id}', 'ActionsController@destroy')->name('adestroyAction');
 Route::get('/evenements/evenement', 'EvenementController@index');

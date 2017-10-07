@@ -25,9 +25,10 @@ class ActionsController extends Controller
       return view('festival.actions.listaction')->withActions($actions);
     }
 
-    public function description()
+    public function description($id)
     {
-      return view('festival.actions.actiondescript');
+      $actions = Action::All()->where('id', '=', $id)->first();
+      return view('festival.actions.actiondescript')->withActions($actions);
     }
 
     /**
