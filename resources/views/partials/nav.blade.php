@@ -41,7 +41,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ url('/participants/participer') }}">Comment participer</a></li>
                             <li><a href="{{ url('/reglements/reglement') }}">Règlement du prix</a></li>
-                            <li><a href="{{ url('/inscriptions/inscription') }}">Inscription</a></li>
+                            <li><a href="{{ url('/inscriptions/jury_inscription') }}">Inscription</a></li>
                         </ul>
                     </li>
 

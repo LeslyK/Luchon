@@ -13,7 +13,7 @@ class InscriptionJuryController extends Controller
      */
     public function index()
     {
-        return view('jury.inscriptions.inscription');
+        return view('jury.inscriptions.jury_inscription');
     }
 
     /**

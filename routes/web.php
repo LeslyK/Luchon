@@ -39,7 +39,7 @@ Route::get('/forums/forum', 'ForumController@index');
 
 //Route jury
 
-Route::get('/inscriptions/inscription', 'InscriptionJuryController@index');
+Route::get('/inscriptions/jury_inscription', 'InscriptionJuryController@index');
 Route::get('/participants/participer', 'ParticipantController@index');
 Route::get('/reglements/reglement', 'ReglementController@index');
 
