@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use\App\inscription;
+use\App\User;
 
 class InscriptionController extends Controller
 {
@@ -13,7 +15,7 @@ class InscriptionController extends Controller
      */
     public function index()
     {
-        return view('accueil.inscription');
+        return view('inscriptions.inscription');
     }
 
     /**
@@ -23,7 +25,8 @@ class InscriptionController extends Controller
      */
     public function create()
     {
-        //
+        $inscriptions = Inscription::All();
+        return view('inscriptions.inscriptionlist', compact('inscriptions'));
     }
 
     /**
@@ -68,7 +71,24 @@ class InscriptionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $inscripts = Inscription::finfOrFail($id);
+      $this->validate($request, [
+        'classe_1' => 'required|max:255',
+        'referent_1' => 'required|max:255',
+        'nombre_1' => 'required|max:255',
+        'accompagnant_1' => 'required|max:255',
+        'etablissement' => 'required|max:255',
+        'adresse' => 'required|max:255',
+        'code' => 'required|max:255',
+        'telephone' => 'required|max:255',
+        'mail_1' => 'required|max:255',
+        'mail_2'=> 'required|max:255',
+      ]);
+      $input = $request->all();
+      $inscripts->fill($input)->save();
+
+      return back()
+        ->with('success','vous êtes inscrit.');
     }
 
     /**
@@ -79,6 +99,6 @@ class InscriptionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Inscription::findOrFail($id)->delete();
     }
 }

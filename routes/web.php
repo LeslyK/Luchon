@@ -51,11 +51,16 @@ Route::get('/soutenirs/soutenir', 'SoutenirController@index');
 Route::get('/stages/stage', 'StageController@index');
 Route::get('/territoires/territoire', 'TerritoireController@index');
 
+//Route inscription
+Route::get('/inscriptions/inscription', 'InscriptionController@index');
+Route::post('/update/{id}', 'InscriptionController@update')->name('inscriptUpdate');
+Route::get('/inscriptions/inscriptionlist', 'InscriptionController@list')->name('listInscript');
+Route::get('/delete/{id}', 'InscriptionController@destroy')->name('deleteList');
+
 //Route accueil
 
 Route::get('/', 'PostsController@welcome');
 Route::get('/accueil/contact', 'ContactController@index');
-Route::get('/accueil/inscription', 'InscriptionController@index');
 Route::get('/actualite', 'PostsController@actualite');
 Route::get('/partenaire', 'PartenaireController@index');
 

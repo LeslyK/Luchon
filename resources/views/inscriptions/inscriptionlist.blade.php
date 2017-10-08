@@ -2,7 +2,7 @@
 
 @section('content')
    <h1>List Admin</h1>
-   <table class="table table-inverse">
+   <!-- <table class="table table-inverse">
        <thead>
            <tr>
              <th>Titre</th>
@@ -23,5 +23,5 @@
            </tr>
            @endforeach
        </tbody>
-     </table>
+     </table> -->
  @endsection

@@ -25,6 +25,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ url('list-gallery') }}" style="color: #777777">Galerie</a></li>
+                    <li><a href="#" style="color: #777777">Vidéo</a></li>
                     <li ><a href="{{ url('partenaire') }}" style="color: #777777">Nos partenaires</a></li>
                 </ul>
         </div>
