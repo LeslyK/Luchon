@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use\App\inscription;
+use\App\Inscription;
 use\App\User;
 
 class InscriptionController extends Controller
@@ -37,7 +37,46 @@ class InscriptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $this->validate($request, [
+        'classe_1' => 'required|max:255',
+        'referent_1' => 'required|max:255',
+        'nombre_1' => 'required|max:255',
+        'accompagnant_1' => 'required|max:255',
+
+        'classe_2' => 'required|max:255',
+        'referent_2' => 'required|max:255',
+        'nombre_2' => 'required|max:255',
+        'accompagnant_2' => 'required|max:255',
+
+        'etablissement' => 'required|max:255',
+        'adresse' => 'required|max:255',
+        'code' => 'required|max:255',
+        'telephone' => 'required|max:255',
+        'mail_1' => 'required|max:255',
+        'mail_2'=> 'required|max:255',
+      ]);
+
+      $inscrit = new Inscription;
+      $inscrit->classe_1 = $request->input('classe_1');
+      $inscrit->referent_1 = $request->input('referent_1');
+      $inscrit->nombre_1 = $request->input('nombre_1');
+      $inscrit->accompagnant_1 = $request->input('accompagnant_1');
+
+      $inscrit->classe_2 = $request->input('classe_2');
+      $inscrit->referent_2 = $request->input('referent_2');
+      $inscrit->nombre_2 = $request->input('nombre_2');
+      $inscrit->accompagnant_2 = $request->input('accompagnant_2');
+
+      $inscrit->etablissement = $request->input('etablissement');
+      $inscrit->adresse = $request->input('adresse');
+      $inscrit->code = $request->input('code');
+      $inscrit->telephone = $request->input('telephone');
+      $inscrit->mail_1 = $request->input('mail_1');
+      $inscrit->mail_2 = $request->input('mail_2');
+      $inscrit->save();
+
+      return view('inscriptions.inscription');
+
     }
 
     /**
@@ -77,6 +116,10 @@ class InscriptionController extends Controller
         'referent_1' => 'required|max:255',
         'nombre_1' => 'required|max:255',
         'accompagnant_1' => 'required|max:255',
+        'classe_2' => 'required|max:255',
+        'referent_2' => 'required|max:255',
+        'nombre_2' => 'required|max:255',
+        'accompagnant_2' => 'required|max:255',
         'etablissement' => 'required|max:255',
         'adresse' => 'required|max:255',
         'code' => 'required|max:255',
@@ -87,8 +130,10 @@ class InscriptionController extends Controller
       $input = $request->all();
       $inscripts->fill($input)->save();
 
-      return back()
-        ->with('success','vous êtes inscrit.');
+      return;
+
+      // return back()
+      //   ->with('success','vous êtes inscrit.');
     }
 
     /**

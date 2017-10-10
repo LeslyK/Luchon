@@ -3,7 +3,8 @@
 @section('content')
     <h2>Festival Fiche d’Inscription</h2>
       <div class="col">
-        <form action="inscrire" method="post">
+        <form action="/inscriptions/store" method="post">
+          {{ csrf_field() }}
       <table class="table table-bordered">
             <thead>
               <tr>
@@ -20,12 +21,12 @@
                   <td><input class="form-control" type="text" name="nombre_1"></td>
                   <td><input class="form-control" type="text" name="accompagnant_1"></td>
               </tr>
-              <!-- <tr>
+              <tr>
                   <td><input class="form-control" type="text" name="classe_2"></td>
                   <td><input class="form-control" type="text" name="referent_2"></td>
                   <td><input class="form-control" type="text" name="nombre_2"></td>
                   <td><input class="form-control" type="text" name="accompagnant_2"></td>
-              </tr> -->
+              </tr>
             </tbody>
       </table>
       <table class="table table-bordered">
