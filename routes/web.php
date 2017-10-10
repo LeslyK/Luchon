@@ -55,7 +55,7 @@ Route::get('/inscriptions/inscription', 'InscriptionController@index');
 Route::post('/update/{id}', 'InscriptionController@update')->name('inscriptUpdate');
 Route::get('/inscriptions/inscriptionlist', 'InscriptionController@list')->name('listInscript');
 Route::post('/inscriptions/store', 'InscriptionController@store')->name('InscritStore');
-Route::get('/delete/{id}', 'InscriptionController@destroy')->name('deleteList');
+Route::get('/delete/{id}', 'InscriptionController@destroy')->name('deleteInscription');
 
 //Route accueil
 

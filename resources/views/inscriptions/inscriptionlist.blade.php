@@ -2,26 +2,45 @@
 
 @section('content')
    <h1>List Admin</h1>
-   <!-- <table class="table table-inverse">
+   <table class="table table-inverse">
        <thead>
            <tr>
-             <th>Titre</th>
-             <th>Description</th>
-             <th><a href="{{ route('actionCreate')}}" style="color: #ffffff " target="_blank">Ajouter</a></th>
-             <th>Modifier</th>
-             <th>Supprimer</th>
+             <th>Class</th>
+             <th>Enseignent Référent</th>
+             <th>Nombre d'éléves</th>
+             <th>Accompagnant</th>
+             <th>Contact</th>
+             <th>Supprime</th>
            </tr>
        </thead>
        <tbody>
-         @foreach($actions as $action)
-           <tr>
-             <td>{{$action->title}}</td>
-             <td>{{$action->description}}</td>
-             <td style="text-align:left;"><a href="{{ route('actionCreate')}}" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true">Add</i></a></td>
-             <td style="text-align:left;"><a href="{{ route('actionEdit', $action->id)}}"><i class="fa fa-pencil">mod</i></a></td>
-             <td style="text-align:left;"><a href="{{ route('actionDelete', $action->id)}}"><i class="fa fa fa-ban">del</i></a></td>
-           </tr>
-           @endforeach
+         @foreach($inscrits as $inscriptions)
+            <tr>
+              <td>{{$inscriptions->classe_1}}</td>
+              <td>{{$inscriptions->referent_1}}</td>
+              <td>{{$inscriptions->nombre_1}}</td>
+              <td>{{$inscriptions->accompagnant_1}}</td>
+              <td>{{$inscriptions->mail_2}}</td>
+              <td><a href="{{ route('deleteInscription', $inscriptions->id) }}">Supp</a></td>
+            </tr>
+            <tr>
+              <td>{{$inscriptions->classe_2}}</td>
+              <td>{{$inscriptions->referent_2}}</td>
+              <td>{{$inscriptions->nombre_2}}</td>
+              <td>{{$inscriptions->accompagnant_2}}</td>
+              <td>{{$inscriptions->mail_2}}</td>
+              <td><a href="{{ route('deleteInscription', $inscriptions->id) }}">Supp</a></td>
+            </tr>
+            <tr>
+              <td>{{$inscriptions->classe_3}}</td>
+              <td>{{$inscriptions->referent_3}}</td>
+              <td>{{$inscriptions->nombre_3}}</td>
+              <td>{{$inscriptions->accompagnant_3}}</td>
+              <td>{{$inscriptions->mail_2}}</td>
+              <td><a href="{{ route('deleteInscription', $inscriptions->id) }}">Supp</a></td>
+            </tr>
+         @endforeach
        </tbody>
-     </table> -->
+
+     </table>
  @endsection

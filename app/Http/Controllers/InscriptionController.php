@@ -18,6 +18,12 @@ class InscriptionController extends Controller
         return view('inscriptions.inscription');
     }
 
+    public function list()
+    {
+      $inscrits = Inscription::All();
+      return view('inscriptions.inscriptionlist', compact('inscrits'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -42,16 +48,20 @@ class InscriptionController extends Controller
         'referent_1' => 'required|max:255',
         'nombre_1' => 'required|max:255',
         'accompagnant_1' => 'required|max:255',
-
         'classe_2' => 'required|max:255',
         'referent_2' => 'required|max:255',
         'nombre_2' => 'required|max:255',
         'accompagnant_2' => 'required|max:255',
-
+        'classe_3' => 'required|max:255',
+        'referent_3' => 'required|max:255',
+        'nombre_3' => 'required|max:255',
+        'accompagnant_3' => 'required|max:255',
         'etablissement' => 'required|max:255',
         'adresse' => 'required|max:255',
+        'ville' => 'required|max:255',
         'code' => 'required|max:255',
         'telephone' => 'required|max:255',
+        'faxe' => 'required|max:255',
         'mail_1' => 'required|max:255',
         'mail_2'=> 'required|max:255',
       ]);
@@ -61,16 +71,20 @@ class InscriptionController extends Controller
       $inscrit->referent_1 = $request->input('referent_1');
       $inscrit->nombre_1 = $request->input('nombre_1');
       $inscrit->accompagnant_1 = $request->input('accompagnant_1');
-
       $inscrit->classe_2 = $request->input('classe_2');
       $inscrit->referent_2 = $request->input('referent_2');
       $inscrit->nombre_2 = $request->input('nombre_2');
       $inscrit->accompagnant_2 = $request->input('accompagnant_2');
-
+      $inscrit->classe_3 = $request->input('classe_3');
+      $inscrit->referent_3 = $request->input('referent_3');
+      $inscrit->nombre_3 = $request->input('nombre_3');
+      $inscrit->accompagnant_3 = $request->input('accompagnant_3');
       $inscrit->etablissement = $request->input('etablissement');
       $inscrit->adresse = $request->input('adresse');
+      $inscrit->ville = $request->input('ville');
       $inscrit->code = $request->input('code');
       $inscrit->telephone = $request->input('telephone');
+      $inscrit->faxe = $request->input('faxe');
       $inscrit->mail_1 = $request->input('mail_1');
       $inscrit->mail_2 = $request->input('mail_2');
       $inscrit->save();
@@ -120,10 +134,16 @@ class InscriptionController extends Controller
         'referent_2' => 'required|max:255',
         'nombre_2' => 'required|max:255',
         'accompagnant_2' => 'required|max:255',
+        'classe_3' => 'required|max:255',
+        'referent_3' => 'required|max:255',
+        'nombre_3' => 'required|max:255',
+        'accompagnant_3' => 'required|max:255',
         'etablissement' => 'required|max:255',
         'adresse' => 'required|max:255',
+        'ville' => 'required|max:255',
         'code' => 'required|max:255',
         'telephone' => 'required|max:255',
+        'faxe' => 'required|max:255',
         'mail_1' => 'required|max:255',
         'mail_2'=> 'required|max:255',
       ]);

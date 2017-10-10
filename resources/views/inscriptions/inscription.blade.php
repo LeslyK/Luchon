@@ -9,7 +9,7 @@
             <thead>
               <tr>
                 <th>Classe</th>
-                <th>Nom l’enseignant référent</th>
+                <th>Enseignant référent</th>
                 <th>Nombre d’élèves</th>
                 <th>Nombre d’accompagnant</th>
               </tr>
@@ -26,6 +26,12 @@
                   <td><input class="form-control" type="text" name="referent_2"></td>
                   <td><input class="form-control" type="text" name="nombre_2"></td>
                   <td><input class="form-control" type="text" name="accompagnant_2"></td>
+              </tr>
+              <tr>
+                  <td><input class="form-control" type="text" name="classe_3"></td>
+                  <td><input class="form-control" type="text" name="referent_3"></td>
+                  <td><input class="form-control" type="text" name="nombre_3"></td>
+                  <td><input class="form-control" type="text" name="accompagnant_3"></td>
               </tr>
             </tbody>
       </table>
@@ -46,12 +52,20 @@
                   <td><input class="form-control" type="address" name="adresse"></td>           
               </tr>
               <tr>
+                  <td>{!! Form::label('title', 'Ville :') !!}</td>
+                  <td><input class="form-control" type="address" name="ville"></td>           
+              </tr>
+              <tr>
                   <td>{!! Form::label('title', 'Code postal :') !!}</td>
                   <td><input class="form-control" type="text" name="code"></td>          
               </tr>
               <tr>
                   <td>{!! Form::label('title', 'Téléphone :') !!}</td>
                   <td><input class="form-control" type="tel" name="telephone"></td>           
+              </tr>
+              <tr>
+                  <td>{!! Form::label('title', 'Faxe :') !!}</td>
+                  <td><input class="form-control" type="address" name="faxe"></td>           
               </tr>
               <tr>
                   <td>{!! Form::label('title', 'Email de l’établissemen :') !!}</td>

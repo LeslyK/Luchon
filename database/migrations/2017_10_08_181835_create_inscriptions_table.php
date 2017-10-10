@@ -23,10 +23,16 @@ class CreateInscriptionsTable extends Migration
             $table->string('referent_2');
             $table->string('nombre_2');
             $table->string('accompagnant_2');
+            $table->string('classe_3');
+            $table->string('referent_3');
+            $table->string('nombre_3');
+            $table->string('accompagnant_3');
             $table->string('etablissement');
             $table->string('adresse');
+            $table->string('ville');
             $table->string('code');
             $table->string('telephone');
+            $table->string('faxe');
             $table->string('mail_1');
             $table->string('mail_2');
             $table->timestamps();
