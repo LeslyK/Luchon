@@ -48,14 +48,6 @@ class InscriptionController extends Controller
         'referent_1' => 'required|max:255',
         'nombre_1' => 'required|max:255',
         'accompagnant_1' => 'required|max:255',
-        'classe_2' => 'required|max:255',
-        'referent_2' => 'required|max:255',
-        'nombre_2' => 'required|max:255',
-        'accompagnant_2' => 'required|max:255',
-        'classe_3' => 'required|max:255',
-        'referent_3' => 'required|max:255',
-        'nombre_3' => 'required|max:255',
-        'accompagnant_3' => 'required|max:255',
         'etablissement' => 'required|max:255',
         'adresse' => 'required|max:255',
         'ville' => 'required|max:255',
@@ -71,14 +63,6 @@ class InscriptionController extends Controller
       $inscrit->referent_1 = $request->input('referent_1');
       $inscrit->nombre_1 = $request->input('nombre_1');
       $inscrit->accompagnant_1 = $request->input('accompagnant_1');
-      $inscrit->classe_2 = $request->input('classe_2');
-      $inscrit->referent_2 = $request->input('referent_2');
-      $inscrit->nombre_2 = $request->input('nombre_2');
-      $inscrit->accompagnant_2 = $request->input('accompagnant_2');
-      $inscrit->classe_3 = $request->input('classe_3');
-      $inscrit->referent_3 = $request->input('referent_3');
-      $inscrit->nombre_3 = $request->input('nombre_3');
-      $inscrit->accompagnant_3 = $request->input('accompagnant_3');
       $inscrit->etablissement = $request->input('etablissement');
       $inscrit->adresse = $request->input('adresse');
       $inscrit->ville = $request->input('ville');
@@ -89,7 +73,7 @@ class InscriptionController extends Controller
       $inscrit->mail_2 = $request->input('mail_2');
       $inscrit->save();
 
-      return view('inscriptions.inscription');
+      return redirect()->route('inscriptionFestival');
 
     }
 
@@ -130,14 +114,6 @@ class InscriptionController extends Controller
         'referent_1' => 'required|max:255',
         'nombre_1' => 'required|max:255',
         'accompagnant_1' => 'required|max:255',
-        'classe_2' => 'required|max:255',
-        'referent_2' => 'required|max:255',
-        'nombre_2' => 'required|max:255',
-        'accompagnant_2' => 'required|max:255',
-        'classe_3' => 'required|max:255',
-        'referent_3' => 'required|max:255',
-        'nombre_3' => 'required|max:255',
-        'accompagnant_3' => 'required|max:255',
         'etablissement' => 'required|max:255',
         'adresse' => 'required|max:255',
         'ville' => 'required|max:255',
@@ -150,7 +126,7 @@ class InscriptionController extends Controller
       $input = $request->all();
       $inscripts->fill($input)->save();
 
-      return;
+      return view('inscriptions.inscription');
 
       // return back()
       //   ->with('success','vous êtes inscrit.');
@@ -165,5 +141,6 @@ class InscriptionController extends Controller
     public function destroy($id)
     {
         Inscription::findOrFail($id)->delete();
+        return redirect()->route('listInscript');
     }
 }

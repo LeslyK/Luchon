@@ -16,22 +16,10 @@
             </thead>
             <tbody>
               <tr>
-                  <td><input class="form-control" type="text" name="classe_1"></td>
-                  <td><input class="form-control" type="text" name="referent_1"></td>
-                  <td><input class="form-control" type="text" name="nombre_1"></td>
-                  <td><input class="form-control" type="text" name="accompagnant_1"></td>
-              </tr>
-              <tr>
-                  <td><input class="form-control" type="text" name="classe_2"></td>
-                  <td><input class="form-control" type="text" name="referent_2"></td>
-                  <td><input class="form-control" type="text" name="nombre_2"></td>
-                  <td><input class="form-control" type="text" name="accompagnant_2"></td>
-              </tr>
-              <tr>
-                  <td><input class="form-control" type="text" name="classe_3"></td>
-                  <td><input class="form-control" type="text" name="referent_3"></td>
-                  <td><input class="form-control" type="text" name="nombre_3"></td>
-                  <td><input class="form-control" type="text" name="accompagnant_3"></td>
+                  <td><input class="form-control" type="text" name="classe_1" placeholder="Nom des classes"></td>
+                  <td><input class="form-control" type="text" name="referent_1" placeholder="Enseignant"></td>
+                  <td><input class="form-control" type="text" name="nombre_1" placeholder="Nombre"></td>
+                  <td><input class="form-control" type="text" name="accompagnant_1" placeholder="Les accompagnants"></td>
               </tr>
             </tbody>
       </table>
@@ -79,9 +67,7 @@
       </table>
       <input type="submit" value="Enregistrer" style="color:#333333" />
         </form>
-        <script type="text/javascript">
-
-        </script>
+    
       </div>
 
 @endsection

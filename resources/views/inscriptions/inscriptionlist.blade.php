@@ -23,22 +23,6 @@
               <td>{{$inscriptions->mail_2}}</td>
               <td><a href="{{ route('deleteInscription', $inscriptions->id) }}">Supp</a></td>
             </tr>
-            <tr>
-              <td>{{$inscriptions->classe_2}}</td>
-              <td>{{$inscriptions->referent_2}}</td>
-              <td>{{$inscriptions->nombre_2}}</td>
-              <td>{{$inscriptions->accompagnant_2}}</td>
-              <td>{{$inscriptions->mail_2}}</td>
-              <td><a href="{{ route('deleteInscription', $inscriptions->id) }}">Supp</a></td>
-            </tr>
-            <tr>
-              <td>{{$inscriptions->classe_3}}</td>
-              <td>{{$inscriptions->referent_3}}</td>
-              <td>{{$inscriptions->nombre_3}}</td>
-              <td>{{$inscriptions->accompagnant_3}}</td>
-              <td>{{$inscriptions->mail_2}}</td>
-              <td><a href="{{ route('deleteInscription', $inscriptions->id) }}">Supp</a></td>
-            </tr>
          @endforeach
        </tbody>
 

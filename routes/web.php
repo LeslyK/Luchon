@@ -51,7 +51,7 @@ Route::get('/stages/stage', 'StageController@index');
 Route::get('/territoires/territoire', 'TerritoireController@index');
 
 //Route inscription
-Route::get('/inscriptions/inscription', 'InscriptionController@index');
+Route::get('/inscriptions/inscription', 'InscriptionController@index')->name('inscriptionFestival');
 Route::post('/update/{id}', 'InscriptionController@update')->name('inscriptUpdate');
 Route::get('/inscriptions/inscriptionlist', 'InscriptionController@list')->name('listInscript');
 Route::post('/inscriptions/store', 'InscriptionController@store')->name('InscritStore');
